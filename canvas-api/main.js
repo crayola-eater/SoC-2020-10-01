@@ -29,7 +29,7 @@ const player = {
 };
 
 document.addEventListener("keydown", (e) => {
-  const mapping = {
+  const methodName = {
     // down
     ArrowUp: "moveDown",
     KeyW: "moveDown",
@@ -42,8 +42,7 @@ document.addEventListener("keydown", (e) => {
     // right
     ArrowRight: "moveRight",
     KeyD: "moveRight",
-  };
-  const methodName = mapping[e.code];
+  }[e.code];
 
   if (undefined !== methodName) {
     player[methodName]();
@@ -101,7 +100,7 @@ const drawEnemies = () => {
 
 const drawPlayer = () => {
   ctx.fillStyle = "rgba(190, 150, 50, 1)";
-  ctx.font = "bold 20pt Courier";
+  ctx.font = "bold 20pt Source Sans Pro";
   ctx.textAlign = "center";
   ctx.fillText("School of Code", player.x, player.y);
 };
